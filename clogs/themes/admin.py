@@ -1,4 +1,8 @@
-from adminsortable2.admin import SortableAdminMixin
+from adminsortable2.admin import (
+    SortableAdminBase,
+    SortableAdminMixin,
+    SortableTabularInline,
+)
 from django.apps import apps
 from django.contrib import admin
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
@@ -55,13 +59,6 @@ class ThemeAdmin(SortableAdminMixin, admin.ModelAdmin):
     inlines = [LayergroupTreeitemInlines, FunctionalityInlines]
 
 
-class LayerInlines(admin.TabularInline):
-    model = models.Restrictionarea.layer.through
-    extra = 2
-    verbose_name = _("Couche")
-    verbose_name_plural = _("Couches")
-
-
 class GroupInline(admin.TabularInline):
     model = models.Restrictionarea.group.through
     can_delete = False
@@ -73,15 +70,30 @@ class GroupInline(admin.TabularInline):
 class RestrictionareaAdmin(admin.ModelAdmin):
     exclude = ["layer", "group"]
     model = models.Restrictionarea
-    inlines = [LayerInlines, GroupInline]
+    inlines = [GroupInline]
+
+
+class LayergroupTreeitemForGroupInline(SortableTabularInline):
+    model = models.LayergroupTreeitem
+    fk_name = "treeitem"
+    can_delete = False
+    extra = 2
+    verbose_name = _("Enfant")
+    verbose_name_plural = _("Enfants")
+
+
+class TreeitemAdmin(SortableAdminBase, admin.ModelAdmin):
+    model = models.Treeitem
+    inlines = [LayergroupTreeitemForGroupInline]
+    verbose_name = _("Groupe")
+    verbose_name_plural = _("Groupes")
 
 
 admin.site.unregister(Group)
 admin.site.register(Group, GroupAdmin)
 admin.site.register(models.Theme, ThemeAdmin)
-admin.site.register(models.Treeitem)
-admin.site.register(models.LayergroupTreeitem)
-admin.site.register(models.Treegroup)
+admin.site.register(models.Treeitem, TreeitemAdmin)
+# admin.site.register(models.LayergroupTreeitem)
 admin.site.register(models.Layer)
 admin.site.register(models.LayerWmts)
 admin.site.register(models.LayerVectortiles)

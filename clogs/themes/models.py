@@ -169,6 +169,11 @@ class LayergroupTreeitem(models.Model):
     description = models.CharField(blank=True, null=True)
     history = HistoricalRecords()
 
+    class Meta:
+        ordering = ["ordering"]
+        verbose_name = _("Groupe de couche")
+        verbose_name_plural = _("Groupes de couche")
+
 
 class Metadata(models.Model):
     """
