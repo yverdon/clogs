@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" media="screen" href="styles/index.css" />
+  <link rel="stylesheet" media="screen" href="styles/index.mobile.css" />
+  <link rel="stylesheet" media="screen" href="styles/common.css" />
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/fontawesome/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css" />
+  </noscript>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/font-gis/font-gis.css" />
+  <noscript>
+    <link rel="stylesheet" href="lib/font-gis/font-gis.css" />
+  </noscript>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/tippy.css" />
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/backdrop.css" />
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/border.css" />
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/svg-arrow.css" />
+  <noscript>
+    <link rel="stylesheet" href="lib/tippy.js/tippy.css" />
+    <link rel="stylesheet" href="lib/tippy.js/backdrop.css" />
+    <link rel="stylesheet" href="lib/tippy.js/border.css" />
+    <link rel="stylesheet" href="lib/tippy.js/svg-arrow.css" />
+  </noscript>
+
+  <link rel="preload" as="font" type="font/woff2" href="lib/fontawesome/webfonts/fa-solid-900.woff2" crossorigin="anonymous" />
+  <link rel="preload" as="font" type="font/woff2" href="lib/fontawesome/webfonts/fa-regular-400.woff2" crossorigin="anonymous" />
+  <link rel="preload" as="font" type="font/woff2" href="lib/font-gis/font-gis.woff2?t=1634903189298" crossorigin="anonymous" />
+
+  <script type="module" src="src/main.ts"></script>
+  <title>GeoGirafe</title>
+</head>
+
+<body>
+  <header>
+    <girafe-theme-select></girafe-theme-select>
+    <img class="logo" alt="geogirafe-logo" src="images/logo_small.webp" />
+  </header>
+
+  <div id="content">
+    <div id="main">
+      <girafe-lr-panel class="panel-left" dock="left">
+        <girafe-tree-view slot="main"></girafe-tree-view>
+      </girafe-lr-panel>
+      <div id="content-map">
+        <girafe-map></girafe-map>
+      </div>
+      <girafe-prototype-banner></girafe-prototype-banner>
+    </div>
+  </div>
+</body>
+
+</html>

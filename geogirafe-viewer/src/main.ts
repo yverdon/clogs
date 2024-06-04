@@ -1,0 +1,1 @@
+import '@geogirafe/lib-geoportal';

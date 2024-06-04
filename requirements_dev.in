@@ -1,0 +1,12 @@
+-r requirements.txt
+pre-commit
+coverage
+django-debug-toolbar
+django-extensions
+factory_boy
+Faker
+ipdb
+pip-tools
+diffimg
+freezegun
+pygraphviz

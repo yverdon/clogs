@@ -1,0 +1,8 @@
+
+[run]
+omit =
+  .venv/*
+  venv/*
+  manage.py
+  clogs/settings*
+  clogs/wsgi.py
