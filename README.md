@@ -21,3 +21,6 @@ docker compose exec python manage.py populate_users
 ```
 
 3. Go to http://localhost:9051 and you should see the welcome page.
+
+![image](https://github.com/monodo/clogs/assets/3356536/e544980f-a563-466c-b2db-60b2597d09f5)
+
