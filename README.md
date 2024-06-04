@@ -1,7 +1,7 @@
 # clogs
 Prototype geogirafe backend with Django Web Framework
 
-:warning This is NOT production ready :warning
+:warning: This is NOT production ready :warning:
 
 
 ## Start playing
