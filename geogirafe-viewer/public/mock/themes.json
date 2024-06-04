@@ -3828,7 +3828,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-grandson":{
@@ -3841,7 +3841,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "WMS Swisstopo":{
@@ -11026,7 +11026,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-missions-actions":{
@@ -11062,7 +11062,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-controles-eau":{
@@ -12727,7 +12727,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-cimetieres":{
@@ -12740,7 +12740,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-ex-sey":{
@@ -12753,7 +12753,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-mf-assainissement":{
@@ -12788,7 +12788,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-gn-sew":{
@@ -12801,7 +12801,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-mf-conduites":{
@@ -12814,7 +12814,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-aggloy":{
@@ -12965,7 +12965,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-qg-concise-revision-pga-normat":{
@@ -12978,7 +12978,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "QGIS-server-espaces":{
@@ -26358,7 +26358,7 @@
           "isSingleTile":false,
           "namespace":"http://www.qgis.org/gml",
           "attributes":{
-             
+
           }
        },
        "ogc.mapnv.ch":{
@@ -27571,7 +27571,7 @@
                                }
                             ],
                             "metadata":{
-                               
+
                             },
                             "mixed":false
                          }
@@ -28108,7 +28108,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_div",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -28122,7 +28122,7 @@
                          "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/swissimage.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -28272,7 +28272,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/orthophotos_swissimage.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
@@ -28329,12 +28329,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -28454,7 +28454,7 @@
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -28468,7 +28468,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"ch_tlm_landesgebiet",
@@ -28492,7 +28492,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"ch_tlm_kantonsgebiet",
@@ -28520,7 +28520,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_lim_limite_commune_label",
@@ -28544,7 +28544,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_lim_limite_commune_poly",
@@ -28568,7 +28568,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"ch_tlm_hoheitsgebiet",
@@ -28587,7 +28587,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -28598,7 +28598,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"vd_batiment_rcb_public",
@@ -28627,7 +28627,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_pf1_pfp1",
@@ -28652,7 +28652,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_pf2_pfp2",
@@ -28677,7 +28677,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_pf3_pfp3",
@@ -28696,7 +28696,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -28711,7 +28711,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_bf_posimmeuble",
@@ -28736,7 +28736,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_bf_point_limite",
@@ -28760,7 +28760,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_bf_ddp",
@@ -28781,10 +28781,10 @@
                             "id":2606,
                             "name":"mo_bf_bien_fonds",
                             "metadata":{
-                               
+
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_bf_bien_fonds",
@@ -28803,7 +28803,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -28815,10 +28815,10 @@
                             "id":2685,
                             "name":"dp_communal",
                             "metadata":{
-                               
+
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"dp_communal",
@@ -28839,10 +28839,10 @@
                             "id":2684,
                             "name":"dp_cantonal",
                             "metadata":{
-                               
+
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"dp_cantonal",
@@ -28863,10 +28863,10 @@
                             "id":2683,
                             "name":"ddp",
                             "metadata":{
-                               
+
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"ddp",
@@ -28885,7 +28885,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -28900,7 +28900,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"adr_rue",
@@ -28924,7 +28924,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"adr_numero",
@@ -28943,7 +28943,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -28958,7 +28958,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_od_posnumero_objet",
@@ -28983,7 +28983,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_od_element_lineaire",
@@ -29008,7 +29008,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_od_element_surfacique",
@@ -29027,7 +29027,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -29043,7 +29043,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_cs_posnumero_de_batiment",
@@ -29068,7 +29068,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"highway_line_nv",
@@ -29093,7 +29093,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_cs_batiment",
@@ -29118,7 +29118,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_od_voie_ferree",
@@ -29143,7 +29143,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_cs_route",
@@ -29168,7 +29168,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"tlm_cs_poly",
@@ -29193,7 +29193,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mo_cs_vigne",
@@ -29217,7 +29217,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"tlm_aire_urbaine",
@@ -29236,7 +29236,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -29251,7 +29251,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"ch_tlm_landesgebiet_in",
@@ -29275,7 +29275,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"ch_tlm_landesgebiet_out",
@@ -29294,13 +29294,13 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":true
              },
@@ -29450,12 +29450,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-ex_mo",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -29531,7 +29531,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -29605,7 +29605,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-ex_mo",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -29638,7 +29638,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -29668,7 +29668,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -29698,7 +29698,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -29728,7 +29728,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -29758,7 +29758,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    }
@@ -29770,7 +29770,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-ex_mo",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -29780,7 +29780,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -29842,15 +29842,15 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-aggloy",
                 "dimensions":{
-                   
+
                 }
              }
           ],
           "functionalities":{
-             
+
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -29914,7 +29914,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_div",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -30065,12 +30065,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -30084,7 +30084,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/chemins_pedestre.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
@@ -30099,7 +30099,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_a_pied.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30114,7 +30114,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_a_velo.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30129,7 +30129,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_a_vtt.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30144,7 +30144,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_en_rollers.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30154,7 +30154,7 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":true
              },
@@ -30175,7 +30175,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"POI_transport",
@@ -30201,7 +30201,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"bus_arret",
@@ -30234,7 +30234,7 @@
                                "legendImage":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/mob_bus_ligne_schema_legend.png"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"bus_ligne",
@@ -30266,7 +30266,7 @@
                                "legend":true
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"mob_bus_ligne_lignes_vd",
@@ -30310,7 +30310,7 @@
                          "queryLayers":"ch.bav.lage-stoerfallverordnung_eisenbahnanlagen"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30329,7 +30329,7 @@
                          "queryLayers":"ch.are.gueteklassen_oev"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30352,7 +30352,7 @@
                                "queryLayers":"ch.astra.unfaelle-personenschaeden_fussgaenger"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30371,7 +30371,7 @@
                                "queryLayers":"ch.astra.unfaelle-personenschaeden_fahrraeder"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30390,7 +30390,7 @@
                                "queryLayers":"ch.astra.unfaelle-personenschaeden_motorraeder"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30409,7 +30409,7 @@
                                "queryLayers":"ch.astra.unfaelle-personenschaeden_alle"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30428,7 +30428,7 @@
                                "queryLayers":"ch.astra.unfaelle-personenschaeden_getoetete"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30438,7 +30438,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -30457,7 +30457,7 @@
                                "queryLayers":"ch.bav.haltestellen-oev"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30476,7 +30476,7 @@
                                "queryLayers":"ch.swisstopo.vec200-transportation-oeffentliche-verkehr"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30486,7 +30486,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    },
@@ -30505,7 +30505,7 @@
                                "queryLayers":"ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner"
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMTS",
                             "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -30515,7 +30515,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    }
@@ -30623,7 +30623,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    }
@@ -30634,7 +30634,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -30899,18 +30899,18 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31087,12 +31087,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31334,7 +31334,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31366,20 +31366,20 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server",
                 "dimensions":{
-                   
+
                 }
              }
           ],
           "functionalities":{
-             
+
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -31486,7 +31486,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_trafic",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31583,12 +31583,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -31598,7 +31598,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -31696,12 +31696,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_ste_equipements_publics",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31823,18 +31823,18 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_ste_equipements_publics",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31885,12 +31885,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_ste_equipements_publics",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31941,12 +31941,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_ste_equipements_publics",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -31997,12 +31997,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_ste_equipements_publics",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -32031,12 +32031,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-ex_bonvillars",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -32054,7 +32054,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"voirie_plantage_number",
@@ -32078,7 +32078,7 @@
                                "isChecked":false
                             },
                             "dimensions":{
-                               
+
                             },
                             "type":"WMS",
                             "layers":"voirie_plantage_street",
@@ -32097,13 +32097,13 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":true
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":true
              },
@@ -32137,7 +32137,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -32167,7 +32167,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -32197,18 +32197,18 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -32218,7 +32218,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -32234,10 +32234,10 @@
                       "id":2084,
                       "name":"visiblite_par_pieton_2021",
                       "metadata":{
-                         
+
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"visiblite_par_pieton_2021",
@@ -32261,7 +32261,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"ch.bfe.solarenergie-eignung-daecher",
@@ -32401,7 +32401,7 @@
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -32666,18 +32666,18 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -32688,7 +32688,7 @@
                       "id":1706,
                       "name":"vd_limites_construction_lcr",
                       "metadata":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"vd_limites_construction_lcr",
@@ -32706,12 +32706,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-ex-vd",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -32725,7 +32725,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"zone_reservee_oit",
@@ -32752,7 +32752,7 @@
                          "metadataUrl":"https://viageo.ch/md/555ce52c-2638-4811-8161-8d51c4f8d3dc"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"pga_concise",
@@ -32779,7 +32779,7 @@
                          "metadataUrl":"https://viageo.ch/md/555ce52c-2638-4811-8161-8d51c4f8d3dc"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"pga_grandson",
@@ -32805,7 +32805,7 @@
                          "metadataUrl":"https://viageo.ch/md/555ce52c-2638-4811-8161-8d51c4f8d3dc"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"pga_yverdon",
@@ -32832,7 +32832,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"pga_zone_de_la_ville_ancienne",
@@ -32859,7 +32859,7 @@
                          "metadataUrl":"https://viageo.ch/md/555ce52c-2638-4811-8161-8d51c4f8d3dc"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"pga_yvonand",
@@ -32878,7 +32878,7 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":true
              },
@@ -32894,7 +32894,7 @@
                          "metadataUrl":"https://viageo.ch/md/a7a975dc-81a5-40cc-b605-2419a4556af4"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"vd.demande_autorisation_construire",
@@ -32919,7 +32919,7 @@
                          "opacity":0.5
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"plan_affectationl_oit",
@@ -32946,7 +32946,7 @@
                          "opacity":0.5
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"vd.zone_affectation",
@@ -32974,7 +32974,7 @@
                          "metadataUrl":"https://viageo.ch/md-frame/c0ba1f54-9919-4c22-8d78-bda0b92f117a"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"vd.surface_assolement",
@@ -33001,7 +33001,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_baulmes",
@@ -33027,7 +33027,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_bavois",
@@ -33053,7 +33053,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_bonvillars",
@@ -33079,7 +33079,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_chavornay",
@@ -33105,7 +33105,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_cuarny",
@@ -33131,7 +33131,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_giez",
@@ -33157,7 +33157,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_orbe",
@@ -33183,7 +33183,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"paf_cantonal_sainte_croix",
@@ -33214,7 +33214,7 @@
                       "id":2685,
                       "name":"dp_communal",
                       "metadata":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"dp_communal",
@@ -33234,7 +33234,7 @@
                       "id":2684,
                       "name":"dp_cantonal",
                       "metadata":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"dp_cantonal",
@@ -33254,7 +33254,7 @@
                       "id":2683,
                       "name":"ddp",
                       "metadata":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"ddp",
@@ -33272,12 +33272,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-urbanisme",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -33306,12 +33306,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -33340,12 +33340,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"source for http://wms.geo.admin.ch/ image/png",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -33355,7 +33355,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -33391,12 +33391,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -33407,7 +33407,7 @@
                       "id":2787,
                       "name":"ch.bfs.gebaeude_wohnungs_register",
                       "metadata":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"ch.bfs.gebaeude_wohnungs_register",
@@ -33425,12 +33425,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"WMS Swisstopo",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -33639,7 +33639,7 @@
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -33674,7 +33674,7 @@
                 "mixed":false,
                 "ogcServer":"source for http://wms.geo.admin.ch/ image/png",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -33684,7 +33684,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -33718,12 +33718,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-qg_ssp",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -33733,7 +33733,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -33827,7 +33827,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -33866,7 +33866,7 @@
                 "mixed":false,
                 "ogcServer":"WMS Swisstopo",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -33897,12 +33897,12 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -33912,7 +33912,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -33951,7 +33951,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -34007,7 +34007,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -34043,15 +34043,15 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              }
           ],
           "functionalities":{
-             
+
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -34091,7 +34091,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -34126,7 +34126,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -34136,7 +34136,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -34159,7 +34159,7 @@
                          "queryLayers":"ch.bav.lage-stoerfallverordnung_eisenbahnanlagen"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -34178,7 +34178,7 @@
                          "queryLayers":"ch.bafu.bundesinventare-vogelreservate"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -34193,7 +34193,7 @@
                          "legend":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMS",
                       "layers":"ch.bafu.waldreservate",
@@ -34221,7 +34221,7 @@
                          "queryLayers":"ch.bafu.bundesinventare-vogelreservate"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -34240,7 +34240,7 @@
                          "queryLayers":"ch.bafu.bundesinventare-vogelreservate"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -34259,7 +34259,7 @@
                          "queryLayers":"ch.bafu.bundesinventare-vogelreservate"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -34422,7 +34422,7 @@
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -34513,7 +34513,7 @@
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -34569,7 +34569,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -34599,20 +34599,20 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":false,
                 "ogcServer":"QGIS-server-ste_ro",
                 "dimensions":{
-                   
+
                 }
              }
           ],
           "functionalities":{
-             
+
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -34652,7 +34652,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-ex-geocity",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -34711,7 +34711,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -34721,7 +34721,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -34782,7 +34782,7 @@
                 "mixed":false,
                 "ogcServer":"source for image/png",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -34792,7 +34792,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -34924,7 +34924,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-cadsout",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -34997,7 +34997,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-mf_div",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -35011,7 +35011,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/chemins_pedestre.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
@@ -35026,7 +35026,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_a_pied.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -35041,7 +35041,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_a_velo.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -35056,7 +35056,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_a_vtt.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -35071,7 +35071,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/la_suisse_en_rollers.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -35081,7 +35081,7 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":true
              },
@@ -35159,7 +35159,7 @@
                                }
                             ],
                             "metadata":{
-                               
+
                             },
                             "mixed":false
                          },
@@ -35229,7 +35229,7 @@
                                }
                             ],
                             "metadata":{
-                               
+
                             },
                             "mixed":false
                          },
@@ -35299,7 +35299,7 @@
                                }
                             ],
                             "metadata":{
-                               
+
                             },
                             "mixed":false
                          }
@@ -35375,7 +35375,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    }
@@ -35386,7 +35386,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-qg_spo",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -35557,7 +35557,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-qg_spo",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -35754,7 +35754,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-qg_spo",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -35764,7 +35764,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -35942,7 +35942,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -36152,7 +36152,7 @@
                          }
                       ],
                       "metadata":{
-                         
+
                       },
                       "mixed":false
                    },
@@ -36203,7 +36203,7 @@
                 "mixed":false,
                 "ogcServer":"QGIS-server-ex_grandson_arbres",
                 "dimensions":{
-                   
+
                 }
              },
              {
@@ -36219,7 +36219,7 @@
                          "legendImage":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/evol_vege_2015-2019_legende.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36230,7 +36230,7 @@
                    }
                 ],
                 "metadata":{
-                   
+
                 },
                 "mixed":true
              },
@@ -36291,7 +36291,7 @@
                 "mixed":false,
                 "ogcServer":"OGC Canton de Vaud",
                 "dimensions":{
-                   
+
                 }
              }
           ],
@@ -36301,7 +36301,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        },
        {
@@ -36320,7 +36320,7 @@
                          "isChecked":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36336,7 +36336,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36352,7 +36352,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36368,7 +36368,7 @@
                          "isChecked":true
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36394,7 +36394,7 @@
                          "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/swissimage.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -36544,7 +36544,7 @@
                          "iconUrl":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/legends/orthophotos_swissimage.png"
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
@@ -36566,10 +36566,10 @@
                       "id":1417,
                       "name":"Carte Siegfried 1870-1926",
                       "metadata":{
-                         
+
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -36581,10 +36581,10 @@
                       "id":1416,
                       "name":"Carte Dufour 1845-1865",
                       "metadata":{
-                         
+
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -36599,7 +36599,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36615,7 +36615,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36631,7 +36631,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36647,7 +36647,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36663,7 +36663,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36679,7 +36679,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36695,7 +36695,7 @@
                          "isChecked":false
                       },
                       "dimensions":{
-                         
+
                       },
                       "type":"WMTS",
                       "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36718,7 +36718,7 @@
              ]
           },
           "metadata":{
-             
+
           }
        }
     ],
@@ -36731,7 +36731,7 @@
              "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/asitvd.fond_couleur.png"
           },
           "dimensions":{
-             
+
           },
           "type":"WMTS",
           "url":"https://wmts.asit-asso.ch/wmts?service=WMTS&version=1.0.0&request=GetCapabilities",
@@ -36750,7 +36750,7 @@
              "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/plan_cadastral.png"
           },
           "dimensions":{
-             
+
           },
           "type":"WMTS",
           "url":"https://ogc.mapnv.ch/mapproxy/service?SERVICE=WMTS&REQUEST=GetCapabilities",
@@ -36768,7 +36768,7 @@
              "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/plan_cadastral.png"
           },
           "dimensions":{
-             
+
           },
           "type":"WMTS",
           "url":"https://wmts.asit-asso.ch/wmts?service=WMTS&version=1.0.0&request=GetCapabilities",
@@ -36784,7 +36784,7 @@
              "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/asitvd.fond_gris.png"
           },
           "dimensions":{
-             
+
           },
           "type":"WMTS",
           "url":"https://wmts.asit-asso.ch/wmts?service=WMTS&version=1.0.0&request=GetCapabilities",
@@ -36799,7 +36799,7 @@
              "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/swissimage.png"
           },
           "dimensions":{
-             
+
           },
           "type":"WMTS",
           "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
@@ -36814,7 +36814,7 @@
              "thumbnail":"https://mapnv.ch/static/baa942b9a4a04c97b938bea92f2cb593/images/backgroundlayers/ch.swisstopo.pixelkarte-farbe.png"
           },
           "dimensions":{
-             
+
           },
           "type":"WMTS",
           "url":"https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",

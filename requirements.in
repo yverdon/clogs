@@ -3,17 +3,15 @@ Django>5
 # Base docker image must be update when GDAL is updated
 # https://github.com/yverdon/docker-clogs/
 gunicorn
-plotly
 psycopg
 requests
 shapely
 whitenoise
 django-oapif@git+https://github.com/opengisch/django-oapif.git
-django-computedfields
 django-simple-history
 django-cors-headers
 django-two-factor-auth[phonenumbers]
 django-oauth-toolkit
 django-allauth
 django-rest-knox
-django-migrate-sql-3
+django-admin-sortable2

@@ -116,8 +116,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    "computedfields",
-    "migrate_sql",
+    "adminsortable2",
 ]
 
 if ENABLE_2FA:
