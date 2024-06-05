@@ -21,12 +21,15 @@ from django_oapif.urls import oapif_router
 
 from clogs.core import views as core_views
 
+from .themes.api import api
+
 urlpatterns = [
     path("", core_views.home, name="home"),
     path("demo-qgis-project", core_views.demo_qgis_project, name="demo_qgis_project"),
     path("admin/", admin.site.urls, {"extra_context": {"DEBUG": settings.DEBUG}}),
     path("oapif/", include(oapif_router.urls)),
     path("users/", include("allauth.urls")),
+    path("api/", api.urls),
 ]
 
 if settings.DEBUG:

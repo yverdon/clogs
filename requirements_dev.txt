@@ -4,6 +4,10 @@
 #
 #    pip-compile requirements_dev.in
 #
+annotated-types==0.7.0
+    # via
+    #   -r requirements.txt
+    #   pydantic
 asgiref==3.8.1
     # via
     #   -r requirements.txt
@@ -56,6 +60,7 @@ django==5.0.6
     #   django-debug-toolbar
     #   django-extensions
     #   django-formtools
+    #   django-ninja
     #   django-oapif
     #   django-oauth-toolkit
     #   django-otp
@@ -79,6 +84,8 @@ django-formtools==2.5.1
     # via
     #   -r requirements.txt
     #   django-two-factor-auth
+django-ninja==1.1.0
+    # via -r requirements.txt
 django-oapif @ git+https://github.com/opengisch/django-oapif.git
     # via -r requirements.txt
 django-oauth-toolkit==2.4.0
@@ -192,6 +199,14 @@ pycparser==2.22
     # via
     #   -r requirements.txt
     #   cffi
+pydantic==2.7.3
+    # via
+    #   -r requirements.txt
+    #   django-ninja
+pydantic-core==2.18.4
+    # via
+    #   -r requirements.txt
+    #   pydantic
 pygments==2.18.0
     # via ipython
 pygraphviz==1.13
@@ -255,6 +270,8 @@ typing-extensions==4.12.1
     #   -r requirements.txt
     #   jwcrypto
     #   psycopg
+    #   pydantic
+    #   pydantic-core
     #   qrcode
 uritemplate==4.1.1
     # via

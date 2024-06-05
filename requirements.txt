@@ -4,6 +4,8 @@
 #
 #    pip-compile requirements.in
 #
+annotated-types==0.7.0
+    # via pydantic
 asgiref==3.8.1
     # via
     #   django
@@ -29,6 +31,7 @@ django==5.0.6
     #   django-allauth
     #   django-cors-headers
     #   django-formtools
+    #   django-ninja
     #   django-oapif
     #   django-oauth-toolkit
     #   django-otp
@@ -46,6 +49,8 @@ django-cors-headers==4.3.1
     # via -r requirements.in
 django-formtools==2.5.1
     # via django-two-factor-auth
+django-ninja==1.1.0
+    # via -r requirements.in
 django-oapif @ git+https://github.com/opengisch/django-oapif.git
     # via -r requirements.in
 django-oauth-toolkit==2.4.0
@@ -91,6 +96,10 @@ psycopg2-binary==2.9.9
     # via django-oapif
 pycparser==2.22
     # via cffi
+pydantic==2.7.3
+    # via django-ninja
+pydantic-core==2.18.4
+    # via pydantic
 pypng==0.20220715.0
     # via qrcode
 pyproj==3.6.1
@@ -115,6 +124,8 @@ typing-extensions==4.12.1
     # via
     #   jwcrypto
     #   psycopg
+    #   pydantic
+    #   pydantic-core
     #   qrcode
 uritemplate==4.1.1
     # via django-oapif
