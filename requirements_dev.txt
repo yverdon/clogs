@@ -62,6 +62,7 @@ django==5.0.6
     #   django-phonenumber-field
     #   django-rest-knox
     #   django-simple-history
+    #   django-treebeard
     #   django-two-factor-auth
     #   djangorestframework
 django-admin-sortable2==2.2.1
@@ -93,6 +94,8 @@ django-phonenumber-field==7.3.0
 django-rest-knox==4.2.0
     # via -r requirements.txt
 django-simple-history==3.7.0
+    # via -r requirements.txt
+django-treebeard==4.7.1
     # via -r requirements.txt
 django-two-factor-auth[phonenumbers]==1.16.0
     # via -r requirements.txt

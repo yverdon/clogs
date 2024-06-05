@@ -1,17 +1,23 @@
-from adminsortable2.admin import (
-    SortableAdminBase,
-    SortableAdminMixin,
-    SortableTabularInline,
-)
+from adminsortable2.admin import SortableAdminMixin
 from django.apps import apps
 from django.contrib import admin
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
 from django.contrib.auth.models import Group
 from django.utils.translation import gettext_lazy as _
+from treebeard.admin import TreeAdmin
+from treebeard.forms import movenodeform_factory
 
 from clogs.themes import models
 
 app = apps.get_app_config("themes")
+
+
+class LayerGroupMpAdmin(TreeAdmin):
+    form = movenodeform_factory(models.LayerGroupMp)
+    list_display = ("name",)
+
+
+admin.site.register(models.LayerGroupMp, LayerGroupMpAdmin)
 
 
 class RoleInline(admin.StackedInline):
@@ -36,13 +42,6 @@ class GroupAdmin(BaseGroupAdmin):
     inlines = (RoleInline, UserInline)
 
 
-class LayergroupTreeitemInlines(admin.TabularInline):
-    model = models.Theme.layergrouptreeitem.through
-    extra = 2
-    verbose_name = _("Groupe")
-    verbose_name_plural = _("Groupes")
-
-
 class FunctionalityInlines(admin.TabularInline):
     model = models.Theme.functionality.through
     extra = 2
@@ -52,11 +51,10 @@ class FunctionalityInlines(admin.TabularInline):
 
 class ThemeAdmin(SortableAdminMixin, admin.ModelAdmin):
     exclude = [
-        "layergrouptreeitem",
         "functionality",
     ]
     model = models.Theme
-    inlines = [LayergroupTreeitemInlines, FunctionalityInlines]
+    inlines = [FunctionalityInlines]
 
 
 class GroupInline(admin.TabularInline):
@@ -73,31 +71,15 @@ class RestrictionareaAdmin(admin.ModelAdmin):
     inlines = [GroupInline]
 
 
-class LayergroupTreeitemForGroupInline(SortableTabularInline):
-    model = models.LayergroupTreeitem
-    fk_name = "treeitem"
-    can_delete = False
-    extra = 2
-    verbose_name = _("Enfant")
-    verbose_name_plural = _("Enfants")
-
-
-class TreeitemAdmin(SortableAdminBase, admin.ModelAdmin):
-    model = models.Treeitem
-    inlines = [LayergroupTreeitemForGroupInline]
-    verbose_name = _("Groupe")
-    verbose_name_plural = _("Groupes")
-
-
 admin.site.unregister(Group)
 admin.site.register(Group, GroupAdmin)
 admin.site.register(models.Theme, ThemeAdmin)
-admin.site.register(models.Treeitem, TreeitemAdmin)
-# admin.site.register(models.LayergroupTreeitem)
 admin.site.register(models.Layer)
 admin.site.register(models.LayerWmts)
+admin.site.register(models.LayerWms)
 admin.site.register(models.LayerVectortiles)
 admin.site.register(models.OgcServer)
 admin.site.register(models.Restrictionarea, RestrictionareaAdmin)
 admin.site.register(models.Functionality)
 admin.site.register(models.Interface)
+admin.site.register(models.Metadata)

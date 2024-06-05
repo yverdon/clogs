@@ -117,6 +117,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "adminsortable2",
+    "treebeard",
 ]
 
 if ENABLE_2FA:
