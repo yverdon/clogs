@@ -8,8 +8,7 @@ Prototype geogirafe backend with Django Web Framework
 - Edit geogirafe themes configuration from admin, including geometric feature edition
 - Users and roles management
 - Historical tracking of configuration changes with possiblity to revert
-
-TODO: implement themes.js endpoint
+- WIP: write themes API using django-ninja
 
 
 ## Start playing
