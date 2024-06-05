@@ -25,6 +25,7 @@ docker compose build && docker compose up -d
 python3 manage.py collectstatic --no-input
 docker compose exec clogs migrate
 docker compose exec python manage.py populate_users
+docker compose exec python manage.py populate_themes
 
 ```
 
