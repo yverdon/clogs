@@ -35,28 +35,35 @@ def create_ogc_servers():
 
 def create_themes():
 
+    layergroups = models.LayerGroupMp.objects.all()
     models.Theme.objects.all().delete()
 
-    models.Theme.objects.create(
+    theme_1 = models.Theme.objects.create(
         name="Cadastre",
         icon="cadastre.svg",
         ordering=1,
         public=True,
     )
 
-    models.Theme.objects.create(
+    theme_1.layergroupmp.set(layergroups)
+
+    theme_2 = models.Theme.objects.create(
         name="Environnement",
         icon="environnement.svg",
         ordering=2,
         public=True,
     )
 
-    models.Theme.objects.create(
+    theme_2.layergroupmp.set(layergroups)
+
+    theme_3 = models.Theme.objects.create(
         name="Plan de Ville",
         icon="citymap.svg",
         ordering=3,
         public=True,
     )
+
+    theme_3.layergroupmp.set(layergroups)
 
 
 def create_layers():
@@ -64,7 +71,7 @@ def create_layers():
     models.Layer.objects.all().delete()
     models.LayerWms.objects.all().delete()
     models.LayerWmts.objects.all().delete()
-    # Don't try this at home but use the admin interface, please
+
     layer_wms = models.Layer.objects.create(name="Layer WMS", public=True)
     layer_wms.interface.set(models.Interface.objects.all())
 
@@ -83,6 +90,9 @@ def create_layers():
     models.LayerWmts.objects.create(
         layer=layer_wtms,
     )
+
+    layergroups = models.LayerGroupMp.objects.all()
+    layer_wms.layergroupmp.set(layergroups)
 
 
 def create_layer_groups():
@@ -111,8 +121,8 @@ class Command(BaseCommand):
 
         create_ogc_servers()
         create_interfaces()
+        create_layer_groups()
         create_themes()
         create_layers()
-        create_layer_groups()
 
         print(f"👥 added demo themes, layer groups and layers for demo!")

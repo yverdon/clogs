@@ -1,7 +1,5 @@
-
 # WIP !
 
-from typing import List, Dict
 
 from ninja import ModelSchema, NinjaAPI, Schema
 
@@ -37,7 +35,7 @@ class OgcserverSchema(ModelSchema):
 class LayerGroupSchema(Schema):
     id: int
     name: str
-    layergroupmp: 'LayerGroupSchema' = None
+    layergroupmp: "LayerGroupSchema" = None
 
 
 class ThemeSchema(Schema):
@@ -59,7 +57,7 @@ class GeogirafeSchema(Schema):
 # https://github.com/fabiocaccamo/django-treenode/discussions/89
 
 
-@api.get("/groups", response=List[LayerGroupSchema])
+@api.get("/groups", response=list[LayerGroupSchema])
 def groups(request):
     queryset = models.LayerGroupMp.objects.all()
     for node in queryset:
@@ -68,6 +66,7 @@ def groups(request):
         print(dump)
         print("//////////////////")
     return queryset
+
 
 @api.get("/layers", response=list[LayerSchema])
 def themes(request):
