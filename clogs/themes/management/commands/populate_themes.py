@@ -105,12 +105,15 @@ def create_layer_groups():
     root_1.layer.set([wms_layer])
     root_1.add_child(name="Mobilité")
     child_1 = root_1.add_child(name="Transports publics")
+    child_1.layer.set([wms_layer])
     child_1.add_child(name="Lignes de bus")
     child_1.add_child(name="Lignes de train")
     root_2 = models.LayerGroupMp.add_root(name="Mensuration")
     root_2.add_child(name="Limites")
+    root_2.layer.set([wms_layer])
     child_2 = root_2.add_child(name="Surfaces")
     child_2.add_child(name="Couveture du sol")
+    child_2.layer.set([wms_layer])
 
 
 class Command(BaseCommand):

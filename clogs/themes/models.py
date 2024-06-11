@@ -24,17 +24,23 @@ class Interface(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
 class Theme(models.Model):
     """
     Top item of layer tree organization
     """
+
     name = models.CharField(max_length=64)
     icon = models.CharField(blank=True, null=True)
     ordering = models.IntegerField()
     public = models.BooleanField()
     functionality = models.ManyToManyField("Functionality", blank=True)
-    interface = models.ManyToManyField("Interface", related_name="theme_interface", blank=True)
-    metadata = models.ManyToManyField("Metadata", related_name="theme_metadata", blank=True)
+    interface = models.ManyToManyField(
+        "Interface", related_name="theme_interface", blank=True
+    )
+    metadata = models.ManyToManyField(
+        "Metadata", related_name="theme_metadata", blank=True
+    )
     layergroupmp = models.ManyToManyField(
         "LayerGroupMp", related_name="theme_layergroupmp", blank=True
     )
@@ -48,6 +54,7 @@ class Theme(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
 
 class LayerGroupMp(MP_Node):
     """
@@ -63,12 +70,12 @@ class LayerGroupMp(MP_Node):
         verbose_name_plural = _("Groupes de couche")
 
     def __str__(self):
-        return f"{_("Groupe")}: {self.name}"
+        return f"Groupe: {self.name}"
 
     @classmethod
     def dump_bulk(cls, parent=None, keep_ids=True):
         """Dumps a tree branch to a python data structure.
-            From: https://github.com/django-treebeard/django-treebeard/blob/fe35cd2d33bed11946f8c28ee34aa2aaca2de73d/treebeard/mp_tree.py#L626
+        From: https://github.com/django-treebeard/django-treebeard/blob/fe35cd2d33bed11946f8c28ee34aa2aaca2de73d/treebeard/mp_tree.py#L626
         """
 
         # TODO: is that useful in clogs case ?
@@ -77,51 +84,65 @@ class LayerGroupMp(MP_Node):
         # Because of fix_tree, this method assumes that the depth
         # and numchild properties in the nodes can be incorrect,
         # so no helper methods are used
-        qset = cls._get_serializable_model().objects.all().prefetch_related("layer").prefetch_related("layer__metadata").prefetch_related("layer__interface")
+        qset = (
+            cls._get_serializable_model()
+            .objects.all()
+            .prefetch_related("layer")
+            .prefetch_related("layer__metadata")
+            .prefetch_related("layer__interface")
+        )
         if parent:
             qset = qset.filter(path__startswith=parent.path)
         ret, lnk = [], {}
         pk_field = cls._meta.pk.attname
-        for pyobj in serializers.serialize('python', qset):
+        for pyobj in serializers.serialize("python", qset):
             # django's serializer stores the attributes in 'fields'
-            fields = pyobj['fields']
-            print(fields)
-            path = fields['path']
+            fields = pyobj["fields"]
+            path = fields["path"]
             depth = int(len(path) / cls.steplen)
             # this will be useless in load_bulk
-            del fields['depth']
-            del fields['path']
-            del fields['numchild']
+            del fields["depth"]
+            del fields["path"]
+            del fields["numchild"]
             if pk_field in fields:
                 # this happens immediately after a load_bulk
                 del fields[pk_field]
 
-            newobj = {'data': fields}
+            newobj = {"data": fields}
             if keep_ids:
-                newobj[pk_field] = pyobj['pk']
+                newobj[pk_field] = pyobj["pk"]
 
-            if (not parent and depth == 1) or\
-               (parent and len(path) == len(parent.path)):
+            if (not parent and depth == 1) or (
+                parent and len(path) == len(parent.path)
+            ):
                 ret.append(newobj)
             else:
                 parentpath = cls._get_basepath(path, depth - 1)
                 parentobj = lnk[parentpath]
-                if 'children' not in parentobj:
-                    parentobj['children'] = []
-                parentobj['children'].append(newobj)
+                if "children" not in parentobj:
+                    parentobj["children"] = []
+                parentobj["children"].append(newobj)
             lnk[path] = newobj
+
         return ret
+
 
 class Layer(models.Model):
     """
     Base model for geographic Layer
     """
+
     name = models.CharField(blank=True, null=True)
     public = models.BooleanField(blank=True, null=True)
     geo_table = models.CharField(blank=True, null=True)
     exclude_properties = models.CharField(blank=True, null=True)
-    interface = models.ManyToManyField("Interface", blank=True,)
-    metadata = models.ManyToManyField("Metadata", related_name="layer_metadata", blank=True)
+    interface = models.ManyToManyField(
+        "Interface",
+        blank=True,
+    )
+    metadata = models.ManyToManyField(
+        "Metadata", related_name="layer_metadata", blank=True
+    )
     history = HistoricalRecords()
 
     class Meta:
@@ -130,6 +151,7 @@ class Layer(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
 
 class Dimension(models.Model):
     name = models.CharField(blank=True, null=True)
@@ -146,6 +168,7 @@ class Dimension(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
 class Functionality(models.Model):
     name = models.CharField()
     value = models.CharField()
@@ -159,6 +182,7 @@ class Functionality(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
 
 class LayerVectortiles(models.Model):
     """
@@ -180,9 +204,9 @@ class LayerVectortiles(models.Model):
         verbose_name = _("Vector Tile")
         verbose_name_plural = _("Vector Tiles")
 
-
     def __str__(self):
         return f"{self.layer.name}"
+
 
 class LayerWms(models.Model):
     """
@@ -208,6 +232,7 @@ class LayerWms(models.Model):
 
     def __str__(self):
         return f"{self.layer.name}"
+
 
 class LayerWmts(models.Model):
     """
@@ -250,6 +275,7 @@ class Metadata(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
 class OgcServer(models.Model):
     """
     Definition of cartographic servers that can be selected when configurating layers
@@ -269,7 +295,6 @@ class OgcServer(models.Model):
     class Meta:
         verbose_name = _("Serveur OGC")
         verbose_name_plural = _("Serveurs OGC")
-
 
     def __str__(self):
         return f"{self.name}"
@@ -296,11 +321,13 @@ class Role(models.Model):
         verbose_name = _("Role")
         verbose_name_plural = _("Roles")
 
+
 # Move to users app ?
 class Restrictionarea(models.Model):
     """
     Model that defines a geographic area that group (role) can see or edit
     """
+
     name = models.CharField()
     description = models.CharField(blank=True, null=True)
     readwrite = models.BooleanField(blank=True, null=True)

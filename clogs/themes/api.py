@@ -1,7 +1,4 @@
-# WIP !
-
-
-from ninja import ModelSchema, NinjaAPI, Schema
+from ninja import NinjaAPI, Schema
 
 from . import models
 
@@ -20,69 +17,56 @@ class MetadataSchema(Schema):
     value: str
 
 
-class LayerSchema(ModelSchema):
-    class Meta:
-        model = models.Layer
-        fields = ["id", "name"]
+# WIP, need to retrieve all layer related models
+class LayerSchema(Schema):
+    id: int | list[int] | None = None
+    name: str | list[str] | None = None
+    metadata: MetadataSchema | list[MetadataSchema] | None = None
+    interface: MetadataSchema | list[MetadataSchema] | None = None
 
 
-class OgcserverSchema(ModelSchema):
-    class Meta:
-        model = models.Layer
-        fields = ["id", "name"]
-
-
-class LayerGroupSchema(Schema):
+class OgcserverSchema(Schema):
     id: int
     name: str
-    layergroupmp: "LayerGroupSchema" = None
 
 
-class ThemeSchema(Schema):
+class LayergroupSchema(Schema):
     id: int
     name: str
-    icon: str
-    layergroupmp: list[LayerGroupSchema] = []
-    functionality: list[FunctionalitySchema] = []
-    metadata: list[MetadataSchema] = []
-
-
-class GeogirafeSchema(Schema):
-    ogcServer: list[OgcserverSchema] = []
-    themes: list[ThemeSchema] = []
-    backgroud_layers: str = None
-    errors: str = None
-
-
-class LayergroupOut(Schema):
-    id: int
-    name: str
-    layer: LayerSchema = None
-    children: list["LayergroupOut"]
+    layer: list[LayerSchema]
+    children: list["LayergroupSchema"]
 
     @classmethod
-    def from_treebeard_dump(cls, data: dict) -> list["LayergroupOut"]:
+    def from_treebeard_dump(cls, data: dict) -> list["LayergroupSchema"]:
         return [
             cls(
                 id=item["id"],
                 name=item["data"]["name"],
+                layer=item["data"]["layer"],
                 children=cls.from_treebeard_dump(item.get("children", [])),
             )
             for item in data
         ]
 
 
+class ThemeSchema(Schema):
+    id: int
+    name: str
+    icon: str
+    layergroupmp: list["LayerGroupSchema"] = []
+    functionality: list[FunctionalitySchema] = []
+    metadata: list[MetadataSchema] = []
+
+
 @api.get("/themes")
 def themes(request):
-    return LayergroupOut.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
+    return LayergroupSchema.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
 
 
-@api.get("/geogirafe", response=list[GeogirafeSchema])
-def themes(request):
-    queryset = (
-        models.Theme.objects.prefetch_related("functionality")
-        .prefetch_related("metadata")
-        .prefetch_related("layergroupmp")
-        .prefetch_related("layergroupmp__layer")
-    )
-    return queryset
+@api.get("/geogirafe")
+def geogirafe(request):
+    return {
+        "themes": themes(request),
+        "ogcServers": "not implemented",
+        "background_layers": "not implemented",
+    }
