@@ -1,5 +1,6 @@
 from django.contrib.auth.models import Group
 from django.contrib.gis.db import models as gismodels
+from django.core import serializers
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from simple_history.models import HistoricalRecords
@@ -64,6 +65,52 @@ class LayerGroupMp(MP_Node):
     def __str__(self):
         return f"{_("Groupe")}: {self.name}"
 
+    @classmethod
+    def dump_bulk(cls, parent=None, keep_ids=True):
+        """Dumps a tree branch to a python data structure.
+            From: https://github.com/django-treebeard/django-treebeard/blob/fe35cd2d33bed11946f8c28ee34aa2aaca2de73d/treebeard/mp_tree.py#L626
+        """
+
+        # TODO: is that useful in clogs case ?
+        # cls = get_result_class(cls)
+
+        # Because of fix_tree, this method assumes that the depth
+        # and numchild properties in the nodes can be incorrect,
+        # so no helper methods are used
+        qset = cls._get_serializable_model().objects.all().prefetch_related("layer").prefetch_related("layer__metadata").prefetch_related("layer__interface")
+        if parent:
+            qset = qset.filter(path__startswith=parent.path)
+        ret, lnk = [], {}
+        pk_field = cls._meta.pk.attname
+        for pyobj in serializers.serialize('python', qset):
+            # django's serializer stores the attributes in 'fields'
+            fields = pyobj['fields']
+            print(fields)
+            path = fields['path']
+            depth = int(len(path) / cls.steplen)
+            # this will be useless in load_bulk
+            del fields['depth']
+            del fields['path']
+            del fields['numchild']
+            if pk_field in fields:
+                # this happens immediately after a load_bulk
+                del fields[pk_field]
+
+            newobj = {'data': fields}
+            if keep_ids:
+                newobj[pk_field] = pyobj['pk']
+
+            if (not parent and depth == 1) or\
+               (parent and len(path) == len(parent.path)):
+                ret.append(newobj)
+            else:
+                parentpath = cls._get_basepath(path, depth - 1)
+                parentobj = lnk[parentpath]
+                if 'children' not in parentobj:
+                    parentobj['children'] = []
+                parentobj['children'].append(newobj)
+            lnk[path] = newobj
+        return ret
 
 class Layer(models.Model):
     """

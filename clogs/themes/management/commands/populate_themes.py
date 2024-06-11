@@ -121,8 +121,8 @@ class Command(BaseCommand):
 
         create_ogc_servers()
         create_interfaces()
+        create_layers()
         create_layer_groups()
         create_themes()
-        create_layers()
 
         print(f"👥 added demo themes, layer groups and layers for demo!")

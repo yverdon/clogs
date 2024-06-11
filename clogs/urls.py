@@ -20,8 +20,7 @@ from django.urls import include, path
 from django_oapif.urls import oapif_router
 
 from clogs.core import views as core_views
-
-from .themes.api import themes
+from clogs.themes.api import api
 
 urlpatterns = [
     path("", core_views.home, name="home"),
@@ -29,7 +28,7 @@ urlpatterns = [
     path("admin/", admin.site.urls, {"extra_context": {"DEBUG": settings.DEBUG}}),
     path("oapif/", include(oapif_router.urls)),
     path("users/", include("allauth.urls")),
-    path("themes/", themes, name="themes"),
+    path("api/", api.urls),
 ]
 
 if settings.DEBUG:
