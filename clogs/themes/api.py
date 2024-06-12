@@ -73,12 +73,6 @@ class LayergroupSchema(Schema):
         ]
 
 
-class LayergroupSchemaBasic(Schema):
-    class Meta:
-        model = models.LayerGroupMp
-        fields = "__all__"
-
-
 class ThemeSchema(ModelSchema):
     metadata: list[MetadataSchema]
     functionality: list[FunctionalitySchema]
@@ -112,9 +106,41 @@ def ogcservers(request):
 
 @api.get("/geogirafe")
 def geogirafe(request):
+
+    ogcservers = models.OgcServer.objects.all()
+    ogcservers_data = [OgcserverSchema.from_orm(i).dict() for i in ogcservers]
+
+    layergroups_data = [
+        LayergroupSchema.from_orm(i).dict()
+        for i in LayergroupSchema.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
+    ]
+
+    # move layers into children's list to be GMF compliant
+    layergroups_data_refactored = []
+    for layergroup in layergroups_data:
+        if layergroup["layers"]:
+            for layer in layergroup["layers"]:
+                layergroup["children"].append(layer)
+            # print(layergroup["children"])
+        layergroups_data_refactored.append(layergroup)
+    print(layergroups_data_refactored)
+
+    themes = models.Theme.objects.all()
+    themes_data = [ThemeSchema.from_orm(i).dict() for i in themes]
+    output_themes_data = []
+    # Add related groups to themes
+    # FIXME: use proper ninja Schema for this to avoid performance leak
+    for theme in themes_data:
+        theme["children"] = []
+        for related_group in theme["layergroupmp"]:
+            for group in layergroups_data_refactored:
+                if group["id"] == related_group:
+                    theme["children"].append(group)
+        output_themes_data.append(theme)
+
     return {
-        "ogcServers": "not implemented",
-        "themes": "not implemented",
+        "ogcServers": ogcservers_data,
+        "themes": output_themes_data,
         "background_layers": "not implemented",
         "errors": "not implemented",
     }

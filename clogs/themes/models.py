@@ -128,6 +128,7 @@ class LayerGroupMp(MP_Node):
                         "invalid_reason"
                     ] = layer.layerwms.invalid_reason
                     # TODO: get OgcServer data
+                    layer_with_attributes["ogcServer"] = layer.layerwms.ogc_server.name
                     print(layer.layerwms.ogc_server.description)
 
                     # TODO: get WMTS layers data
