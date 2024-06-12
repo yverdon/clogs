@@ -1,4 +1,6 @@
-from ninja import NinjaAPI, Schema
+from typing import List
+
+from ninja import ModelSchema, NinjaAPI, Schema
 
 from . import models
 
@@ -11,10 +13,22 @@ class FunctionalitySchema(Schema):
     value: str
 
 
-class MetadataSchema(Schema):
-    id: int
-    name: str
-    value: str
+class MetadataSchema(ModelSchema):
+    class Meta:
+        model = models.Metadata
+        fields = "__all__"
+
+
+class FunctionalitySchema(ModelSchema):
+    class Meta:
+        model = models.Functionality
+        fields = "__all__"
+
+
+class InterfaceSchema(ModelSchema):
+    class Meta:
+        model = models.Interface
+        fields = "__all__"
 
 
 # WIP, need to retrieve all layer related models
@@ -49,24 +63,41 @@ class LayergroupSchema(Schema):
         ]
 
 
-class ThemeSchema(Schema):
-    id: int
-    name: str
-    icon: str
-    layergroupmp: list["LayerGroupSchema"] = []
-    functionality: list[FunctionalitySchema] = []
-    metadata: list[MetadataSchema] = []
+class LayergroupSchemaBasic(Schema):
+    class Meta:
+        model = models.LayerGroupMp
+        fields = "__all__"
 
 
-@api.get("/themes")
+class ThemeSchema(ModelSchema):
+    metadata: list[MetadataSchema]
+    functionality: list[FunctionalitySchema]
+    interface: list[InterfaceSchema]
+
+    class Meta:
+        model = models.Theme
+        fields = "__all__"
+
+
+@api.get("/themes", response=list[ThemeSchema])
 def themes(request):
+    return (
+        models.Theme.objects.all()
+        .prefetch_related("metadata")
+        .prefetch_related("interface")
+        .prefetch_related("functionality")
+    )
+
+
+@api.get("/layergroups")
+def layergroups(request):
     return LayergroupSchema.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
 
 
 @api.get("/geogirafe")
 def geogirafe(request):
     return {
-        "themes": themes(request),
+        "themes": layergroups(request),
         "ogcServers": "not implemented",
         "background_layers": "not implemented",
     }

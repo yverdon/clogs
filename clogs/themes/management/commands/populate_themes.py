@@ -18,6 +18,35 @@ def create_interfaces():
     )
 
 
+def create_functionalities():
+    models.Functionality.objects.all().delete()
+
+    models.Functionality.objects.create(
+        name="Functionality A",
+        value="Dummy Functionality Value A",
+        description="Dummy Functionality Description A",
+    )
+
+    models.Functionality.objects.create(
+        name="Functionality B",
+        value="Dummy Functionality Value B",
+        description="Dummy Functionality Description B",
+    )
+
+
+def create_metadatas():
+
+    models.Metadata.objects.all().delete()
+
+    models.Metadata.objects.create(
+        name="Test metadata A", description="Metadata fixture A", value="Dummy value A"
+    )
+
+    models.Metadata.objects.create(
+        name="Test metadata B", description="Metadata fixture B", value="Dummy value B"
+    )
+
+
 def create_ogc_servers():
 
     models.OgcServer.objects.all().delete()
@@ -36,6 +65,9 @@ def create_ogc_servers():
 def create_themes():
 
     layergroups = models.LayerGroupMp.objects.all()
+    metadatas = models.Metadata.objects.all()
+    interfaces = models.Interface.objects.all()
+    functionalities = models.Functionality.objects.all()
     models.Theme.objects.all().delete()
 
     theme_1 = models.Theme.objects.create(
@@ -46,6 +78,9 @@ def create_themes():
     )
 
     theme_1.layergroupmp.set(layergroups)
+    theme_1.metadata.set(metadatas)
+    theme_1.interface.set(interfaces)
+    theme_1.functionality.set(functionalities)
 
     theme_2 = models.Theme.objects.create(
         name="Environnement",
@@ -55,6 +90,9 @@ def create_themes():
     )
 
     theme_2.layergroupmp.set(layergroups)
+    theme_2.metadata.set(metadatas)
+    theme_2.interface.set(interfaces)
+    theme_2.functionality.set(functionalities)
 
     theme_3 = models.Theme.objects.create(
         name="Plan de Ville",
@@ -64,6 +102,9 @@ def create_themes():
     )
 
     theme_3.layergroupmp.set(layergroups)
+    theme_3.metadata.set(metadatas)
+    theme_3.interface.set(interfaces)
+    theme_3.functionality.set(functionalities)
 
 
 def create_layers():
@@ -121,7 +162,8 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
-
+        create_functionalities()
+        create_metadatas()
         create_ogc_servers()
         create_interfaces()
         create_layers()
