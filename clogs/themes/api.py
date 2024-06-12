@@ -1,5 +1,3 @@
-from typing import List
-
 from ninja import ModelSchema, NinjaAPI, Schema
 
 from . import models
@@ -11,6 +9,12 @@ class FunctionalitySchema(Schema):
     id: int
     name: str
     value: str
+
+
+class OgcserverSchema(ModelSchema):
+    class Meta:
+        model = models.OgcServer
+        fields = "__all__"
 
 
 class MetadataSchema(ModelSchema):
@@ -31,32 +35,38 @@ class InterfaceSchema(ModelSchema):
         fields = "__all__"
 
 
-# WIP, need to retrieve all layer related models
-class LayerSchema(Schema):
-    id: int | list[int] | None = None
-    name: str | list[str] | None = None
-    metadata: MetadataSchema | list[MetadataSchema] | None = None
-    interface: MetadataSchema | list[MetadataSchema] | None = None
-
-
 class OgcserverSchema(Schema):
     id: int
     name: str
 
 
+class LayerSchema(ModelSchema):
+    metadata: list[MetadataSchema]
+
+    class Meta:
+        model = models.Layer
+        fields = [
+            "id",
+            "name",
+            "public",
+            "metadata",
+        ]
+
+
 class LayergroupSchema(Schema):
     id: int
     name: str
-    layer: list[LayerSchema]
+    layers: list[LayerSchema]
     children: list["LayergroupSchema"]
 
     @classmethod
     def from_treebeard_dump(cls, data: dict) -> list["LayergroupSchema"]:
+
         return [
             cls(
                 id=item["id"],
                 name=item["data"]["name"],
-                layer=item["data"]["layer"],
+                layers=item["data"]["layer"],
                 children=cls.from_treebeard_dump(item.get("children", [])),
             )
             for item in data
@@ -73,6 +83,7 @@ class ThemeSchema(ModelSchema):
     metadata: list[MetadataSchema]
     functionality: list[FunctionalitySchema]
     interface: list[InterfaceSchema]
+    # TODO: add layergroups recursive m2m field
 
     class Meta:
         model = models.Theme
@@ -94,10 +105,16 @@ def layergroups(request):
     return LayergroupSchema.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
 
 
+@api.get("/ogcservers", response=list[OgcserverSchema])
+def ogcservers(request):
+    return models.OgcServer.objects.all()
+
+
 @api.get("/geogirafe")
 def geogirafe(request):
     return {
-        "themes": layergroups(request),
         "ogcServers": "not implemented",
+        "themes": "not implemented",
         "background_layers": "not implemented",
+        "errors": "not implemented",
     }

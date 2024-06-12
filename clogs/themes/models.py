@@ -95,6 +95,7 @@ class LayerGroupMp(MP_Node):
             qset = qset.filter(path__startswith=parent.path)
         ret, lnk = [], {}
         pk_field = cls._meta.pk.attname
+        i = 0
         for pyobj in serializers.serialize("python", qset):
             # django's serializer stores the attributes in 'fields'
             fields = pyobj["fields"]
@@ -108,6 +109,40 @@ class LayerGroupMp(MP_Node):
                 # this happens immediately after a load_bulk
                 del fields[pk_field]
 
+            # If the layer group has layers, all related data need to b retrieved
+            # GMF & Geogirafe expect to get them as extended children
+            layers_list = []
+            for layer in qset[i].layer.all():
+                # Get layer attributes
+                layer_with_attributes = {}
+                layer_with_attributes["name"] = layer.name
+                layer_with_attributes["id"] = layer.id
+                layer_with_attributes["public"] = layer.public
+                # Get layer wms attributes
+                if layer.layerwms:
+                    layer_with_attributes["style"] = layer.layerwms.style
+                    layer_with_attributes["time_mode"] = layer.layerwms.time_mode
+                    layer_with_attributes["time_widget"] = layer.layerwms.time_widget
+                    layer_with_attributes["valid"] = layer.layerwms.valid
+                    layer_with_attributes[
+                        "invalid_reason"
+                    ] = layer.layerwms.invalid_reason
+                    # TODO: get OgcServer data
+                    print(layer.layerwms.ogc_server.description)
+
+                    # TODO: get WMTS layers data
+
+                # Get m2m objects for metadata
+                metadata_list = [metadata for metadata in layer.metadata.all().values()]
+                layer_with_attributes["metadata"] = metadata_list
+                # Get m2m objects for interfaces
+                interface_list = [
+                    interface for interface in layer.interface.all().values()
+                ]
+                layer_with_attributes["interface"] = interface_list
+
+                layers_list.append(layer_with_attributes)
+            fields["layer"] = layers_list
             newobj = {"data": fields}
             if keep_ids:
                 newobj[pk_field] = pyobj["pk"]
@@ -123,7 +158,7 @@ class LayerGroupMp(MP_Node):
                     parentobj["children"] = []
                 parentobj["children"].append(newobj)
             lnk[path] = newobj
-
+            i += 1
         return ret
 
 

@@ -112,9 +112,12 @@ def create_layers():
     models.Layer.objects.all().delete()
     models.LayerWms.objects.all().delete()
     models.LayerWmts.objects.all().delete()
+    interfaces = models.Interface.objects.all()
+    metadatas = models.Metadata.objects.all()
 
     layer_wms = models.Layer.objects.create(name="Layer WMS", public=True)
-    layer_wms.interface.set(models.Interface.objects.all())
+    layer_wms.interface.set(interfaces)
+    layer_wms.metadata.set(metadatas)
 
     models.LayerWms.objects.all().delete()
 
@@ -124,7 +127,8 @@ def create_layers():
     )
 
     layer_wtms = models.Layer.objects.create(name="Layer WMTS Swisstopo", public=True)
-    layer_wtms.interface.set(models.Interface.objects.all())
+    layer_wtms.interface.set(interfaces)
+    layer_wtms.metadata.set(metadatas)
 
     models.LayerWmts.objects.all().delete()
 
