@@ -116,14 +116,13 @@ def geogirafe(request):
     ]
 
     # move layers into children's list to be GMF compliant
+    # FIXME: use proper ninja Schema for this to avoid performance leak
     layergroups_data_refactored = []
     for layergroup in layergroups_data:
         if layergroup["layers"]:
             for layer in layergroup["layers"]:
                 layergroup["children"].append(layer)
-            # print(layergroup["children"])
         layergroups_data_refactored.append(layergroup)
-    print(layergroups_data_refactored)
 
     themes = models.Theme.objects.all()
     themes_data = [ThemeSchema.from_orm(i).dict() for i in themes]

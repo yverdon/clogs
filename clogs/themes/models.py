@@ -61,7 +61,7 @@ class LayerGroupMp(MP_Node):
     Recursive model from django-treebeard to handle children-parent relationships
     """
 
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=128)
     layer = models.ManyToManyField("Layer", related_name="layergroupmp", blank=True)
     node_order_by = ["name"]
 
@@ -127,9 +127,7 @@ class LayerGroupMp(MP_Node):
                     layer_with_attributes[
                         "invalid_reason"
                     ] = layer.layerwms.invalid_reason
-                    # TODO: get OgcServer data
                     layer_with_attributes["ogcServer"] = layer.layerwms.ogc_server.name
-                    print(layer.layerwms.ogc_server.description)
 
                     # TODO: get WMTS layers data
 
