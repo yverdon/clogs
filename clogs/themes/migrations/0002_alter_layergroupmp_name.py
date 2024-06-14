@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('themes', '0001_initial'),
+        ("themes", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='layergroupmp',
-            name='name',
+            model_name="layergroupmp",
+            name="name",
             field=models.CharField(max_length=128),
         ),
     ]
