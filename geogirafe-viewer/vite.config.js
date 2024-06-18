@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { InlineTemplatesPlugin, HtmlRebuildPlugin } from '@geogirafe/lib-geoportal/buildtools';
 
 const cesiumSource = 'node_modules/cesium/Build/Cesium';
 const cesiumBaseUrl = 'lib/cesium/';
@@ -22,6 +23,7 @@ export default defineConfig({
         { src: `${cesiumSource}/Assets`, dest: cesiumBaseUrl },
         { src: `${cesiumSource}/Widgets`, dest: cesiumBaseUrl },
         { src: 'node_modules/@geogirafe/lib-geoportal/styles/*.css', dest: 'styles/' },
+        { src: 'node_modules/@geogirafe/lib-geoportal/public/about.json', dest: '' },
         { src: 'node_modules/@geogirafe/lib-geoportal/public/icons/*', dest: 'icons/' },
         { src: 'node_modules/@geogirafe/lib-geoportal/public/lib/*', dest: 'lib/' },
         { src: 'node_modules/ol/ol.css', dest: 'lib/ol/' },
@@ -32,7 +34,9 @@ export default defineConfig({
         { src: 'node_modules/vanilla-picker/dist/*.css', dest: 'lib/vanilla-picker/' },
         { src: 'config.json', dest: '' }
       ]
-    })
+    }),
+    InlineTemplatesPlugin(),
+    HtmlRebuildPlugin()
   ],
   define: {
     CESIUM_BASE_URL: JSON.stringify(cesiumBaseUrl)

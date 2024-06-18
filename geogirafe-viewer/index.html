@@ -8,6 +8,7 @@
   <link rel="stylesheet" media="screen" href="styles/index.css" />
   <link rel="stylesheet" media="screen" href="styles/index.mobile.css" />
   <link rel="stylesheet" media="screen" href="styles/common.css" />
+  <link rel="stylesheet" media="screen" href="./custom.css" />
 
   <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/fontawesome/css/all.min.css" />
   <noscript>
@@ -40,6 +41,25 @@
   <header>
     <girafe-theme-select></girafe-theme-select>
     <img class="logo" alt="geogirafe-logo" src="images/logo_small.webp" />
+    <my-first-component></my-first-component>
+    <div id="buttonbar">
+      <button class="girafe-button-big" onclick="document.geogirafe.state.interface.helpVisible = true">
+        <img alt="help-icon" src="icons/help.svg" />
+      </button>
+      <girafe-menu-button>
+        <button slot="menu-button" class="girafe-button-big">
+          <img alt="menu-icon" src="icons/menu.svg" />
+        </button>
+        <girafe-globe-select slot="menu-content"></girafe-globe-select>
+        <button
+          slot="menu-content"
+          class="girafe-button-medium"
+          onclick="document.geogirafe.state.interface.aboutVisible = true">
+          <img alt="help-icon" src="icons/info.svg" />
+          <span>About</span>
+        </button>
+      </girafe-menu-button>
+    </div>
   </header>
 
   <div id="content">
@@ -49,8 +69,16 @@
       </girafe-lr-panel>
       <div id="content-map">
         <girafe-map></girafe-map>
+        <div class="info-area">
+        <girafe-infobox></girafe-infobox>
+          <footer>
+            <girafe-scale></girafe-scale>
+          </footer>
+        </div>
       </div>
       <girafe-prototype-banner></girafe-prototype-banner>
+      <girafe-help></girafe-help>
+      <my-extended-component></my-extended-component>
     </div>
   </div>
 </body>

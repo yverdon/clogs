@@ -1,3 +1,4 @@
 dist
 node_modules
 vite.config.js.timestamp-*.mjs
+public/about.json
