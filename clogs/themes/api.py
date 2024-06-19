@@ -99,7 +99,7 @@ def layergroups(request):
     return LayergroupSchema.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
 
 
-@api.get("/ogcservers", response=list[OgcserverSchema])
+@api.get("/ogcservers", response=OgcserverSchema)
 def ogcservers(request):
     return models.OgcServer.objects.all()
 
