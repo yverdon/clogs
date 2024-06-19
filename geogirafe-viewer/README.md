@@ -1,14 +1,12 @@
 # Getting Started
 
-## Start here
-
 ### Install dependencies
 
 ```
 npm install
 ```
 
-### Start dev server
+### Start the development server
 
 ```
 npm start
@@ -26,32 +24,52 @@ npm run build
 npm run preview
 ```
 
-## Update to last version of GeoGirafe
+### Update to last version of GeoGirafe
 
 ```
-npm install @geogirafe/lib-geoportal@latest
+npm update @geogirafe/lib-geoportal
 ```
 
-## Go further
+# Configure and customize your instance
 
-- The file `config.json` contains the application configuration.  
+### Main configuration
+
+The file `config.json` contains the application configuration.  
 See https://doc.geomapfish.dev/docs/configuration for more configuration options.
 
-- The file `public/mock/themes.json` contains the themes configuration.  
+### Themes and layers
+
+The file `public/mock/themes.json` contains the themes configuration.  
 Consult the GeoMapFish documentation for more infos about this, or have a look at the demos for some examples :
   - https://demo.geomapfish.dev/mapbs/Mock/themes.json
   - https://demo.geomapfish.dev/sitn/Mock/themes.json
   - https://demo.geomapfish.dev/mapnv/Mock/themes.json
 
+### Translations
 
-- The file `public/mock/en.json` contains the application translations.
+The file `public/mock/en.json` contains the application translations.
 
-- The file `index.html` defines your application template.  
+### Main interface
+
+The file `index.html` defines your application template.  
 A complete example can be found here: https://gitlab.com/geogirafe/gg-viewer/-/blob/main/index.html?ref_type=heads
 
+### Styling
 
-## Contact
+The file `custom.css` ist the way were custom css can be placed.
 
-You can join our Discord Server at any time to get some help or just to discuss: https://discord.gg/kdrXjaqBbH.
+# Develop your own components
+
+### Your first custom component
+
+The directory `src/components/my-first-component` contains an example on how to create a custom component for GeoGirafe.
+
+### Extending an existing component
+
+The directory `src/components/my-extended-component` contains an example on how to extend an existing component.
+
+# Contact
+
+You can join our Discord server at any time to get some help or just to discuss with us: https://discord.gg/kdrXjaqBbH.
 
 _Have a nice journey with GeoGirafe ! :-)_

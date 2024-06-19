@@ -98,7 +98,7 @@ class Command(BaseCommand):
     @transaction.atomic
     def handle(self, *args, **options):
 
-        # TODO: load ogc servre from json, this is a dummy one!
+        # TODO: load ogc serve from json, this is a dummy one!
         models.OgcServer.objects.all().delete()
         url="https://ogc.mapnv.ch/wms-mapnv",
         models.OgcServer.objects.create(
@@ -110,6 +110,6 @@ class Command(BaseCommand):
             wfs_support=True,
             is_single_tile=True,
         )
-        load_geoportal("https://mapnv.ch/themes")
+        load_geoportal("https://map.geo.bs.ch/themes")
 
         print(f"👥 import themes from {url}!")
