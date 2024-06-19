@@ -77,35 +77,13 @@ class ThemeSchema(ModelSchema):
     metadata: list[MetadataSchema]
     functionality: list[FunctionalitySchema]
     interface: list[InterfaceSchema]
-    # TODO: add layergroups recursive m2m field
 
     class Meta:
         model = models.Theme
         fields = "__all__"
 
-
-@api.get("/themes", response=list[ThemeSchema])
+@api.get("/themes")
 def themes(request):
-    return (
-        models.Theme.objects.all()
-        .prefetch_related("metadata")
-        .prefetch_related("interface")
-        .prefetch_related("functionality")
-    )
-
-
-@api.get("/layergroups")
-def layergroups(request):
-    return LayergroupSchema.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
-
-
-@api.get("/ogcservers", response=OgcserverSchema)
-def ogcservers(request):
-    return models.OgcServer.objects.all()
-
-
-@api.get("/geogirafe")
-def geogirafe(request):
 
     ogcservers = models.OgcServer.objects.all()
     ogcservers_data = [OgcserverSchema.from_orm(i).dict() for i in ogcservers]
@@ -116,7 +94,7 @@ def geogirafe(request):
     ]
 
     # move layers into children's list to be GMF compliant
-    # FIXME: use proper ninja Schema for this to avoid performance leak
+    # FIXME: fix performance leak
     layergroups_data_refactored = []
     for layergroup in layergroups_data:
         if layergroup["layers"]:
@@ -128,7 +106,7 @@ def geogirafe(request):
     themes_data = [ThemeSchema.from_orm(i).dict() for i in themes]
     output_themes_data = []
     # Add related groups to themes
-    # FIXME: use proper ninja Schema for this to avoid performance leak
+    # FIXME: fix performance leak
     for theme in themes_data:
         theme["children"] = []
         for related_group in theme["layergroupmp"]:

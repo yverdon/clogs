@@ -93,23 +93,16 @@ def load_geoportal(url):
 
 
 class Command(BaseCommand):
-    help = "Populate basic themes, layer groups and layers"
+    help = "Import configuration from themes.json data"
+
+    def add_arguments(self, parser):
+        parser.add_argument("geoportal_url", type=str)
 
     @transaction.atomic
     def handle(self, *args, **options):
 
-        # TODO: load ogc serve from json, this is a dummy one!
-        models.OgcServer.objects.all().delete()
-        url="https://ogc.mapnv.ch/wms-mapnv",
-        models.OgcServer.objects.create(
-            name="OGC QGIS Server",
-            description="QGIS server",
-            url=url,
-            type="QGIS server",
-            image_type="image/png",
-            wfs_support=True,
-            is_single_tile=True,
-        )
-        load_geoportal("https://map.geo.bs.ch/themes")
+        geoportal_url = options['geoportal_url']
 
-        print(f"👥 import themes from {url}!")
+        load_geoportal(geoportal_url)
+
+        print(f"👥 import themes from {geoportal_url}!")
