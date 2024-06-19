@@ -10,7 +10,8 @@
     "defaultLanguage": "fr"
   },
   "themes": {
-    "url": "mock/themes.json",
+    // "url": "mock/themes.json",
+    "url": "http://localhost:9051/api/geogirafe",
     "defaultTheme": ""
   },
   "basemaps": {
