@@ -63,6 +63,7 @@ class LayerGroupMp(MP_Node):
 
     name = models.CharField(max_length=128)
     layer = models.ManyToManyField("Layer", related_name="layergroupmp", blank=True)
+    # TODO: add metadata ManyToManyField
     node_order_by = ["name"]
 
     class Meta:
@@ -324,6 +325,8 @@ class OgcServer(models.Model):
     auth = models.CharField()
     wfs_support = models.BooleanField(blank=True, null=True)
     is_single_tile = models.BooleanField(blank=True, null=True)
+    # TODO: implment retrieval from OGC servers 
+    attributes = models.JSONField(blank=True, null=True)
     history = HistoricalRecords()
 
     class Meta:

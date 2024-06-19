@@ -58,6 +58,7 @@ def import_ogc_servers(data):
             # auth = data[key]["auth"],
             wfs_support = data[key]["wfsSupport"],
             is_single_tile = data[key]["isSingleTile"],
+            attributes = data[key]["attributes"],
         )
 
 

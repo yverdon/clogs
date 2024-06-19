@@ -1,4 +1,5 @@
-from ninja import ModelSchema, NinjaAPI, Schema
+from ninja import ModelSchema, NinjaAPI, Schema, Field
+from ninja.orm.fields import AnyObject
 
 from . import models
 
@@ -9,12 +10,6 @@ class FunctionalitySchema(Schema):
     id: int
     name: str
     value: str
-
-
-class OgcserverSchema(ModelSchema):
-    class Meta:
-        model = models.OgcServer
-        fields = "__all__"
 
 
 class MetadataSchema(ModelSchema):
@@ -38,6 +33,16 @@ class InterfaceSchema(ModelSchema):
 class OgcserverSchema(Schema):
     id: int
     name: str
+    wms: str = Field(None, alias="url")
+    wfsUrl: str = Field(None, alias="url_wfs")
+    type: str
+    credential: bool = True #FIXME
+    imageType: str = Field(None, alias="image_type")
+    wfsSupport: bool = Field(None, alias="wfs_support")
+    isSingleType: bool = Field(None, alias="is_single_tile")
+    namespace: str = ""
+    attributes: AnyObject
+
 
 
 class LayerSchema(ModelSchema):
@@ -86,14 +91,16 @@ class ThemeSchema(ModelSchema):
 def themes(request):
 
     ogcservers = models.OgcServer.objects.all()
-    ogcservers_data = [OgcserverSchema.from_orm(i).dict() for i in ogcservers]
-
+    ogcservers_dict = {}
+    for server in ogcservers:
+        ogcservers_dict[server.name] = OgcserverSchema.from_orm(server).dict()
     layergroups_data = [
         LayergroupSchema.from_orm(i).dict()
         for i in LayergroupSchema.from_treebeard_dump(models.LayerGroupMp.dump_bulk())
     ]
 
-    # move layers into children's list to be GMF compliant
+    # move layers into children's list to be geogirafe compliant
+    # we can't use alias here as the "children" key is already used in Schema
     # FIXME: fix performance leak
     layergroups_data_refactored = []
     for layergroup in layergroups_data:
@@ -116,8 +123,9 @@ def themes(request):
         output_themes_data.append(theme)
 
     return {
-        "ogcServers": ogcservers_data,
+        "ogcServers": ogcservers_dict,
         "themes": output_themes_data,
-        "background_layers": "not implemented",
-        "errors": "not implemented",
+        # TODO: implements optional objects
+        "background_layers": [], 
+        "errors": [],
     }
