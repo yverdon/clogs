@@ -162,8 +162,6 @@ oauthlib==3.2.2
     # via
     #   -r requirements.txt
     #   django-oauth-toolkit
-orjson==3.10.3
-    # via -r requirements.txt
 packaging==24.0
     # via
     #   -r requirements.txt

@@ -29,7 +29,6 @@ ROOT_URLCONF = "clogs.urls"
 PREFIX_URL = os.environ.get("PREFIX_URL", "")
 CLEAR_PUBLIC_SCHEMA_ON_FIXTURIZE = os.getenv("CLEAR_PUBLIC_SCHEMA_ON_FIXTURIZE")
 
-
 SECURE_PROXY_SSL_HEADER = (
     tuple(os.getenv("SECURE_PROXY_SSL_HEADER").split(","))
     if os.getenv("SECURE_PROXY_SSL_HEADER")
@@ -111,6 +110,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.gis",
+    "corsheaders",
     "rest_framework",
     "rest_framework_gis",
     "allauth",
@@ -139,6 +139,7 @@ if ENV == "DEV":
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -229,7 +230,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ALLOWED_ORIGINS = [] + os.getenv("ALLOWED_CORS").split(",")
 
-if DEBUG and not CORS_ALLOWED_ORIGINS:
+if DEBUG and CORS_ALLOWED_ORIGINS:
     CORS_ALLOW_ALL_ORIGINS = True
 
 # Internationalization

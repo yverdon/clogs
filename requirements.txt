@@ -86,8 +86,6 @@ numpy==1.26.4
     # via shapely
 oauthlib==3.2.2
     # via django-oauth-toolkit
-orjson==3.10.3
-    # via -r requirements.in
 packaging==24.0
     # via gunicorn
 phonenumbers==8.13.37
