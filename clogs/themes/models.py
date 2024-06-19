@@ -79,9 +79,6 @@ class LayerGroupMp(MP_Node):
         From: https://github.com/django-treebeard/django-treebeard/blob/fe35cd2d33bed11946f8c28ee34aa2aaca2de73d/treebeard/mp_tree.py#L626
         """
 
-        # TODO: is that useful in clogs case ?
-        # cls = get_result_class(cls)
-
         # Because of fix_tree, this method assumes that the depth
         # and numchild properties in the nodes can be incorrect,
         # so no helper methods are used

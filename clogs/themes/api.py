@@ -6,12 +6,6 @@ from . import models
 api = NinjaAPI()
 
 
-class FunctionalitySchema(Schema):
-    id: int
-    name: str
-    value: str
-
-
 class MetadataSchema(ModelSchema):
     class Meta:
         model = models.Metadata
