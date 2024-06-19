@@ -37,7 +37,17 @@ docker compose build && docker compose up -d
 docker compose exec clogs scripts/demo.sh
 ```
 
-3. Go to http://localhost:9051 and you should see the welcome page.
+Go to http://localhost:9051 and you should see the welcome page.
+
+4. Start de geogirafe demo
+
+
+```
+cd geogirafe-viewer
+npm start
+```
+Go to http://localhost:5173 and you should see the welcome page.
+
 
 ![image](https://github.com/monodo/clogs/assets/3356536/739a69dd-879d-4589-9735-62922aedf08f)
 
