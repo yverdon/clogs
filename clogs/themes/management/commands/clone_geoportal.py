@@ -8,7 +8,6 @@ from clogs.themes import models
 
 
 def import_layergroups(children, new_theme=None, parent_node=None):
-    print("Recursing theme's layer groups...")
     # List of theme's related layer groups, or layer groups related layer groups...
     for child in children:
         # First level
@@ -32,10 +31,35 @@ def import_layergroups(children, new_theme=None, parent_node=None):
                         ogc_server=models.OgcServer.objects.first(),
                     )
 
+                if "metadata" in child:
+                    for key, value in child["metadata"].items():
+                        metadata = models.Metadata.objects.create(
+                            name=key,
+                            value=value,
+                        )
+                        layer.metadata.add(metadata)
+
         if len(child.keys()) > 1:
             for key, value in child.items():
                 if key == "children":
                     import_layergroups(value, parent_node=group)
+
+def import_ogc_servers(data):
+
+    models.OgcServer.objects.all().delete()
+    for key, value in data.items():
+        models.OgcServer.objects.get_or_create(
+            name=key,
+            # description = data[key]["description"],
+            url = data[key]["url"],
+            url_wfs = data[key]["urlWfs"],
+            type = data[key]["type"],
+            image_type = data[key]["imageType"],
+            # auth = data[key]["auth"],
+            wfs_support = data[key]["wfsSupport"],
+            is_single_tile = data[key]["isSingleTile"],
+        )
+
 
 
 def load_geoportal(url):
@@ -46,6 +70,9 @@ def load_geoportal(url):
     models.LayerWms.objects.all().delete()
     r = requests.get(url)
     data = json.loads(r.content)
+
+    import_ogc_servers(data["ogcServers"])
+
     for theme in data["themes"]:
         new_theme = models.Theme.objects.create(
             name=theme["name"],
@@ -53,6 +80,14 @@ def load_geoportal(url):
             ordering=1,
             public=True,
         )
+        print(f'...Importing theme: {theme["name"]}...')
+        if "metadata" in theme:
+            for key, value in theme["metadata"].items():
+                metadata = models.Metadata.objects.create(
+                    name=key,
+                    value=value,
+                )
+                new_theme.metadata.add(metadata)
 
         import_layergroups(theme["children"], new_theme)
 
@@ -65,11 +100,11 @@ class Command(BaseCommand):
 
         # TODO: load ogc serve from json, this is a dummy one!
         models.OgcServer.objects.all().delete()
-
+        url="https://ogc.mapnv.ch/wms-mapnv",
         models.OgcServer.objects.create(
             name="OGC QGIS Server",
             description="QGIS server",
-            url="https://ogc.mapnv.ch/wms-mapnv",
+            url=url,
             type="QGIS server",
             image_type="image/png",
             wfs_support=True,
@@ -77,4 +112,4 @@ class Command(BaseCommand):
         )
         load_geoportal("https://map.geo.bs.ch/themes")
 
-        print(f"👥 added demo themes, layer groups and layers from existing geoportal!")
+        print(f"👥 import themes from {url}!")
