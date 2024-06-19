@@ -6,9 +6,18 @@ Prototype geogirafe backend with Django Web Framework
 ## Features
 
 - Edit geogirafe themes configuration from admin, including geometric feature edition
-- Users and roles management
+- Import themes configuration from  existing geoportal
+- Users and roles management with Django built-in functionnalities
 - Historical tracking of configuration changes with possiblity to revert
-- WIP: write themes API using django-ninja
+- Expose themes.json thanks to django-ninja
+- Demo geogirage viewer connected to ninja's endpoint
+
+![image](https://github.com/monodo/clogs/assets/3356536/739a69dd-879d-4589-9735-62922aedf08f)
+
+
+
+
+https://github.com/monodo/clogs/assets/3356536/41c3300b-1eb9-466f-bd2f-2066032aada5
 
 
 ## Start playing
@@ -49,7 +58,7 @@ npm start
 Go to http://localhost:5173 and you should see the welcome page.
 
 
-![image](https://github.com/monodo/clogs/assets/3356536/739a69dd-879d-4589-9735-62922aedf08f)
+
 
 
 
