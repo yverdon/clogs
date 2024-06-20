@@ -67,7 +67,7 @@ class LayerGroupMp(MP_Node):
     node_order_by = ["name"]
 
     class Meta:
-        verbose_name = _("Groupede de couche")
+        verbose_name = _("Groupe de de couche")
         verbose_name_plural = _("Groupes de couche")
 
     def __str__(self):
