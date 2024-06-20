@@ -60,6 +60,7 @@ django==5.0.6
     #   django-debug-toolbar
     #   django-extensions
     #   django-formtools
+    #   django-jazzmin
     #   django-ninja
     #   django-oapif
     #   django-oauth-toolkit
@@ -84,6 +85,8 @@ django-formtools==2.5.1
     # via
     #   -r requirements.txt
     #   django-two-factor-auth
+django-jazzmin==3.0.0
+    # via -r requirements.txt
 django-ninja==1.1.0
     # via -r requirements.txt
 django-oapif @ git+https://github.com/opengisch/django-oapif.git

@@ -14,6 +14,8 @@ from pathlib import Path
 
 from django.conf import settings
 
+from .jazzmin_settings import JAZZMIN_SETTINGS  # noqa
+
 # Set environment mode
 ENV = os.getenv("ENV")
 if ENV not in ["DEV", "PROD"]:
@@ -102,6 +104,8 @@ INSTALLED_APPS = [
     "clogs.users",
     "clogs.themes",
     "django_oapif",
+    # third party packages
+    'jazzmin',
     # django
     "django.contrib.admin",
     "django.contrib.auth",
@@ -298,3 +302,5 @@ LOGGING = {
         "level": "INFO",
     },
 }
+
+

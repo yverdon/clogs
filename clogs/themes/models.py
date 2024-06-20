@@ -185,6 +185,27 @@ class Layer(models.Model):
         return f"{self.name}"
 
 
+# TODO implement custom manager to get only wms layers
+class LayerForLayerWmsAdmin(Layer):
+    class Meta:
+        proxy = True
+        verbose_name = _("WMS Layer")
+
+
+# TODO implement custom manager to get only wmts layers
+class LayerForLayerWmtsAdmin(Layer):
+    class Meta:
+        proxy = True
+        verbose_name = _("WMTS Layer")
+
+
+# TODO implement custom manager to get only vector tile layers
+class LayerForVectorTileAdmin(Layer):
+    class Meta:
+        proxy = True
+        verbose_name = _("Vectortile Layer")
+
+
 class Dimension(models.Model):
     name = models.CharField(blank=True, null=True)
     value = models.CharField(blank=True, null=True)
@@ -283,8 +304,8 @@ class LayerWmts(models.Model):
     history = HistoricalRecords()
 
     class Meta:
-        verbose_name = _("Couche WMTS")
-        verbose_name_plural = _("Couches WMTS")
+        verbose_name = _("WMTS Layer")
+        verbose_name_plural = _("WMTS Layers")
 
     def __str__(self):
         return f"{self.layer.name}"
