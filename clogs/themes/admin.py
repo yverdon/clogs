@@ -12,7 +12,6 @@ from clogs.themes import models
 app = apps.get_app_config("themes")
 
 
-
 class LayerWmsInline(admin.StackedInline):
     model = models.LayerWms
     extra = 0
@@ -25,7 +24,8 @@ class LayerWmsAdmin(admin.ModelAdmin):
     model = models.LayerForLayerWmsAdmin
     list_display = ("name",)
     inlines = (LayerWmsInline,)
-    def get_queryset (self, request):
+
+    def get_queryset(self, request):
         return models.LayerForVectorTileAdmin.objects.filter(layerwms__isnull=False)
 
 
@@ -41,9 +41,9 @@ class LayerWmtsAdmin(admin.ModelAdmin):
     model = models.LayerForLayerWmtsAdmin
     list_display = ("name",)
     inlines = (LayerWmtsInline,)
-    def get_queryset (self, request):
-        return models.LayerForVectorTileAdmin.objects.filter(layerwmts__isnull=False)
 
+    def get_queryset(self, request):
+        return models.LayerForVectorTileAdmin.objects.filter(layerwmts__isnull=False)
 
 
 class LayerVectorTileInline(admin.StackedInline):
@@ -59,9 +59,11 @@ class LayerVectorTileInline(admin.StackedInline):
 class LayerVectorTilesAdmin(admin.ModelAdmin):
     model = models.LayerForVectorTileAdmin
     inlines = (LayerVectorTileInline,)
-    def get_queryset (self, request):
-        return models.LayerForVectorTileAdmin.objects.filter(layervectortile__isnull=False)
 
+    def get_queryset(self, request):
+        return models.LayerForVectorTileAdmin.objects.filter(
+            layervectortile__isnull=False
+        )
 
 
 class LayerGroupMpAdmin(TreeAdmin):
@@ -97,17 +99,20 @@ class FunctionalityInlines(admin.TabularInline):
     verbose_name = _("Fonctionnalité")
     verbose_name_plural = _("Fonctionnalités")
 
+
 class MetadataInlines(admin.TabularInline):
     model = models.Theme.metadata.through
     extra = 2
     verbose_name = _("Métadonnée")
     verbose_name_plural = _("Métadonnées")
 
+
 class LayergroupmpInlines(admin.TabularInline):
     model = models.Theme.layergroupmp.through
     extra = 2
     verbose_name = _("Groupe de couche")
     verbose_name_plural = _("Groupes de couches")
+
 
 class interfaceInlines(admin.TabularInline):
     model = models.Theme.interface.through
@@ -124,7 +129,6 @@ class GroupForThemeInline(admin.TabularInline):
     verbose_name_plural = _("Roles")
 
 
-
 class ThemeAdmin(SortableAdminMixin, admin.ModelAdmin):
     exclude = [
         "functionality",
@@ -134,13 +138,23 @@ class ThemeAdmin(SortableAdminMixin, admin.ModelAdmin):
         "interface",
     ]
     model = models.Theme
-    inlines = [LayergroupmpInlines, GroupForThemeInline, FunctionalityInlines, MetadataInlines, interfaceInlines]
+    inlines = [
+        LayergroupmpInlines,
+        GroupForThemeInline,
+        FunctionalityInlines,
+        MetadataInlines,
+        interfaceInlines,
+    ]
 
     fieldsets = [
         (
             None,
             {
-                "fields": ["name", "icon", "public",],
+                "fields": [
+                    "name",
+                    "icon",
+                    "public",
+                ],
             },
         ),
     ]

@@ -28,7 +28,10 @@ urlpatterns = [
     path("admin/", admin.site.urls, {"extra_context": {"DEBUG": settings.DEBUG}}),
     path("oapif/", include(oapif_router.urls)),
     path("users/", include("allauth.urls")),
-    path("api/", api.urls,),
+    path(
+        "api/",
+        api.urls,
+    ),
 ]
 
 if settings.DEBUG:

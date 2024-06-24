@@ -105,7 +105,7 @@ INSTALLED_APPS = [
     "clogs.themes",
     "django_oapif",
     # third party packages
-    'jazzmin',
+    "jazzmin",
     # django
     "django.contrib.admin",
     "django.contrib.auth",
@@ -302,5 +302,3 @@ LOGGING = {
         "level": "INFO",
     },
 }
-
-

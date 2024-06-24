@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('themes', '0002_alter_layergroupmp_name'),
+        ("themes", "0002_alter_layergroupmp_name"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='historicalogcserver',
-            name='attributes',
+            model_name="historicalogcserver",
+            name="attributes",
             field=models.JSONField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='ogcserver',
-            name='attributes',
+            model_name="ogcserver",
+            name="attributes",
             field=models.JSONField(blank=True, null=True),
         ),
     ]

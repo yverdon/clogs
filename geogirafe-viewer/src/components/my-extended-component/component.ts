@@ -2,12 +2,12 @@ import { AboutComponent } from "@geogirafe/lib-geoportal/components";
 
 /**
  * This is an exemple how to override a web component defined in the core of GeoGirafe
- * The technical documentation of AboutComponent can be found here: 
+ * The technical documentation of AboutComponent can be found here:
  * https://doc.geomapfish.dev/code/classes/components_about_component.AboutComponent.html
  */
 
 /**
- * NOTE: With the current version of GeoGirafe, 
+ * NOTE: With the current version of GeoGirafe,
  * It is important that the custom components are located in the directory src/components
  * Because this location is hardcoded in the build script at the moment.
  */

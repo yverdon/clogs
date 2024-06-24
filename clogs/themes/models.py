@@ -343,7 +343,7 @@ class OgcServer(models.Model):
     auth = models.CharField()
     wfs_support = models.BooleanField(blank=True, null=True)
     is_single_tile = models.BooleanField(blank=True, null=True)
-    # TODO: implment retrieval from OGC servers 
+    # TODO: implment retrieval from OGC servers
     attributes = models.JSONField(blank=True, null=True)
     history = HistoricalRecords()
 

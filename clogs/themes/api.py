@@ -1,4 +1,4 @@
-from ninja import ModelSchema, NinjaAPI, Schema, Field
+from ninja import Field, ModelSchema, NinjaAPI, Schema
 from ninja.orm.fields import AnyObject
 
 from . import models
@@ -30,13 +30,12 @@ class OgcserverSchema(Schema):
     wms: str = Field(None, alias="url")
     wfsUrl: str = Field(None, alias="url_wfs")
     type: str
-    credential: bool = True #FIXME
+    credential: bool = True  # FIXME
     imageType: str = Field(None, alias="image_type")
     wfsSupport: bool = Field(None, alias="wfs_support")
     isSingleType: bool = Field(None, alias="is_single_tile")
     namespace: str = ""
     attributes: AnyObject
-
 
 
 class LayerSchema(ModelSchema):
@@ -81,6 +80,7 @@ class ThemeSchema(ModelSchema):
         model = models.Theme
         fields = "__all__"
 
+
 @api.get("/themes")
 def themes(request):
 
@@ -120,6 +120,6 @@ def themes(request):
         "ogcServers": ogcservers_dict,
         "themes": output_themes_data,
         # TODO: implements optional objects
-        "background_layers": [], 
+        "background_layers": [],
         "errors": [],
     }

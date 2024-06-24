@@ -44,6 +44,7 @@ def import_layergroups(children, new_theme=None, parent_node=None):
                 if key == "children":
                     import_layergroups(value, parent_node=group)
 
+
 def import_ogc_servers(data):
 
     models.OgcServer.objects.all().delete()
@@ -51,16 +52,15 @@ def import_ogc_servers(data):
         models.OgcServer.objects.get_or_create(
             name=key,
             # description = data[key]["description"],
-            url = data[key]["url"],
-            url_wfs = data[key]["urlWfs"],
-            type = data[key]["type"],
-            image_type = data[key]["imageType"],
+            url=data[key]["url"],
+            url_wfs=data[key]["urlWfs"],
+            type=data[key]["type"],
+            image_type=data[key]["imageType"],
             # auth = data[key]["auth"],
-            wfs_support = data[key]["wfsSupport"],
-            is_single_tile = data[key]["isSingleTile"],
-            attributes = data[key]["attributes"],
+            wfs_support=data[key]["wfsSupport"],
+            is_single_tile=data[key]["isSingleTile"],
+            attributes=data[key]["attributes"],
         )
-
 
 
 def load_geoportal(url):
@@ -102,7 +102,7 @@ class Command(BaseCommand):
     @transaction.atomic
     def handle(self, *args, **options):
 
-        geoportal_url = options['geoportal_url']
+        geoportal_url = options["geoportal_url"]
 
         load_geoportal(geoportal_url)
 

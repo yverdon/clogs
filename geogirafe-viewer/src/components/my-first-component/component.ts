@@ -5,12 +5,12 @@ import { GirafeHTMLElement } from "@geogirafe/lib-geoportal/base";
  * Note that you do not have to extend GirafeHTMLElement here.
  * It makes the job easier, because everything will be ready for the integration in a GeoGirafe application
  * Like for exemple access to the state, translations, templating, styling, ...
- * But you don't have to. If you prefer, you can extent the standard HTMLElement. 
+ * But you don't have to. If you prefer, you can extent the standard HTMLElement.
  * In this case, you will just have a bit more work to integrate it in the GeoGirafe world.
  */
 
 /**
- * NOTE: With the current version of GeoGirafe, 
+ * NOTE: With the current version of GeoGirafe,
  * It is important that the custom components are located in the directory src/components
  * Because this location is hardcoded in the build script at the moment.
  */
@@ -27,8 +27,8 @@ class MyFirstComponent extends GirafeHTMLElement {
   }
 
   registerEvents() {
-    /** 
-     * Listen to any change of the selectedTheme property in the state 
+    /**
+     * Listen to any change of the selectedTheme property in the state
      * https://gitlab.com/geogirafe/gg-viewer/-/blob/main/src/tools/state/state.ts?ref_type=heads#L75
      * And rerender the component when this property changes
      */
