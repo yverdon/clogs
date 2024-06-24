@@ -256,7 +256,7 @@ LANGUAGES = (
 )
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
-STATIC_URL = os.environ["STATIC_URL"]
+
 STATIC_ROOT = "/static_root"
 
 # OAUTH2 Config
